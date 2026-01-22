@@ -1,8 +1,8 @@
 class Cryptography
 {
-    public void shiftDisplay(char[] arr , int shiftCount)
+    public void shiftDisplay(String[] arr , int shiftCount)
     {
-        char[] array  = new char[arr.length];
+        String[] array  = new String[arr.length];
         
         System.out.println("Shifted Alphabets : ");
         for(int i = 0; i <= arr.length - 1  ; i++)
@@ -31,7 +31,7 @@ class Cryptography
 public class cipher {
     public static void main(String[] args)
     {
-        char alphabets[]  = { 'a' , 'b', 'c', 'd' , 'e' , 'f' , 'g' ,'h' , 'i' , 'j' , 'k' , 'l' , 'm' , 'n' , 'o' , 'p' , 'q' , 'r' , 's' , 't', 'u' , 'v' , 'w', 'x' , 'y' , 'z'};
+        String alphabets[]  = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
         System.out.println("This is original alphebets");
 
     
