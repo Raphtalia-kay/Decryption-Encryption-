@@ -8,14 +8,20 @@ class Cryptography
         System.out.println("Shifted Alphabets : ");
         for(int i = 0; i <= alphabets.length - 1  ; i++)
         {  
-            if(i == alphabets.length - 1)
-                array[i] = alphabets[0];
-            else
-                array[i] = alphabets[i + 1];
-                
+            
+            if (i + shiftCount < alphabets.length)
+                {
+                    array[i] = alphabets[i + shiftCount];
+                    
+                }
+            else 
+                    array[i] = alphabets[(i+shiftCount) - alphabets.length];
+           
             System.out.print(array[i] + " ");
            
+           
         }
+        
           System.out.println("");
     }
     public String encryption(String message , int shiftCount )
@@ -42,6 +48,6 @@ public class cipher {
         }
         System.out.println("");
         
-        newAlphbets.shiftDisplay(0 );
+        newAlphbets.shiftDisplay(5 );
     }
 }
