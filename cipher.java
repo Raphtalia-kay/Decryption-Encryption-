@@ -1,16 +1,17 @@
 class Cryptography
 {
-    public void shiftDisplay(String[] arr , int shiftCount)
+    String alphabets[]  = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
+    public void shiftDisplay( int shiftCount)
     {
-        String[] array  = new String[arr.length];
+        String[] array  = new String[alphabets.length];
         
         System.out.println("Shifted Alphabets : ");
-        for(int i = 0; i <= arr.length - 1  ; i++)
+        for(int i = 0; i <= alphabets.length - 1  ; i++)
         {  
-            if(i == arr.length - 1)
-                array[i] = arr[0];
+            if(i == alphabets.length - 1)
+                array[i] = alphabets[0];
             else
-                array[i] = arr[i + 1];
+                array[i] = alphabets[i + 1];
                 
             System.out.print(array[i] + " ");
            
@@ -31,17 +32,16 @@ class Cryptography
 public class cipher {
     public static void main(String[] args)
     {
-        String alphabets[]  = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
+       
+        Cryptography newAlphbets = new Cryptography();
         System.out.println("This is original alphebets");
 
-    
-        for( int i = 0; i <= alphabets.length - 1; i++)
+        for( int i = 0; i <= newAlphbets.alphabets.length - 1; i++)
         { 
-            System.out.print(alphabets[i] + " ");
+           System.out.print(newAlphbets.alphabets[i] + " ");
         }
-
-          System.out.println("");
-        Cryptography newAlphbets = new Cryptography();
-        newAlphbets.shiftDisplay(alphabets,0 );
+        System.out.println("");
+        
+        newAlphbets.shiftDisplay(0 );
     }
 }
