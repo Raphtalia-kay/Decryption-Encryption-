@@ -41,13 +41,13 @@ class Cryptography
             for(int j = 0 ; j <= alphabets.length - 1 ; j++ ){
                 if( alphabets[j].equals(letter))
                  updateMessageArray[i]  = shiftedArray[j];
+                else if (letter.equals(" ") || letter.equals("'") || letter.equals(":") || letter.equals(".") || letter.equals(",") || letter.equals(";") || letter.equals("?") ||  letter.equals("!"))
+                 updateMessageArray[i]  =  letter;
             }
                 
         }
         String updateMessage = String.join("", updateMessageArray);
         System.out.println("here update -> " + updateMessage);
-        
-        
         return updateMessage; 
     }
     public String decryption(String message , int shiftCount )
@@ -57,7 +57,6 @@ class Cryptography
         String[] shiftedArray = this.shiftDisplay(shiftCount);
 
         String[] messageArray = message.toLowerCase().split("");
-
 
         String[] updateMessageArray = new String[messageArray.length];
 
@@ -69,17 +68,20 @@ class Cryptography
             for(int j = 0 ; j <= shiftedArray.length - 1 ; j++ ){
                 if( shiftedArray[j].equals(letter))
                  updateMessageArray[i]  = alphabets[j];
+                else if (letter.equals(" ") || letter.equals("'") || letter.equals(":") || letter.equals(".") || letter.equals(",") || letter.equals(";") || letter.equals("?") ||  letter.equals("!"))
+                    // System.out.println("space");
+                    updateMessageArray[i]  =  letter;
+
             }
                 
         }
         String updateMessage = String.join("", updateMessageArray);
+        System.out.println("");
         System.out.println("here update -> " + updateMessage);
         
         
         return updateMessage; 
-    }
-
-    
+    }   
 }
 public class cipher {
     public static void main(String[] args)
@@ -92,10 +94,14 @@ public class cipher {
         }
         System.out.println("");
         // newAlphbets.shiftDisplay(3 );
+       
 
-        newAlphbets.encryption("Hello", 5);
-        newAlphbets.decryption("mjqqt", 5);
+        // newAlphbets.encryption("Hello!", 5);
+        for(int i = 1; i < 26 ; i++)
+        {
+            newAlphbets.decryption("Kpk nfyl huk nptisl pu aol dhil:", i);
 
+        }
         
         
         
