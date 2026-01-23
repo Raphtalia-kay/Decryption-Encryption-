@@ -50,9 +50,33 @@ class Cryptography
         
         return updateMessage; 
     }
-     public String decryption(String message , int shiftCount )
+    public String decryption(String message , int shiftCount )
     {
-        return "Decryption";
+        System.out.println();
+
+        String[] shiftedArray = this.shiftDisplay(shiftCount);
+
+        String[] messageArray = message.toLowerCase().split("");
+
+
+        String[] updateMessageArray = new String[messageArray.length];
+
+        
+        for( int i = 0 ; i <= messageArray.length - 1 ; i++)
+        {
+            String letter = messageArray[i];
+
+            for(int j = 0 ; j <= shiftedArray.length - 1 ; j++ ){
+                if( shiftedArray[j].equals(letter))
+                 updateMessageArray[i]  = alphabets[j];
+            }
+                
+        }
+        String updateMessage = String.join("", updateMessageArray);
+        System.out.println("here update -> " + updateMessage);
+        
+        
+        return updateMessage; 
     }
 
     
@@ -69,7 +93,9 @@ public class cipher {
         System.out.println("");
         // newAlphbets.shiftDisplay(3 );
 
-        newAlphbets.encryption("Hello", 3);
+        newAlphbets.encryption("Hello", 5);
+        newAlphbets.decryption("mjqqt", 5);
+
         
         
         
